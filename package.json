@@ -34,7 +34,6 @@
       "last 1 safari version"
     ]
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "devDependencies": {},
   "repository": {
@@ -45,6 +44,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gabrigiunchi/prova-npm-package/issues"
-  },
-  "homepage": "https://github.com/gabrigiunchi/prova-npm-package#readme"
+  }
 }
