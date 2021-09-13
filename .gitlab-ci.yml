@@ -9,4 +9,5 @@ build-job:
 publish:
   stage: deploy
   script:
+    - echo ${NPM_TOKEN}
     - npm publish --access public
