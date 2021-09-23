@@ -1,5 +1,9 @@
 import React from 'react';
+import {Component2} from "./Component2";
 
 export const Child = () => {
-    return <span>child</span>
+    return <div>
+        <p>child</p>
+        <Component2/>
+    </div>
 }
