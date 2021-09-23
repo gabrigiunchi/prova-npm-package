@@ -9,4 +9,5 @@ build-job:
 publish:
   stage: deploy
   script:
+    - cp -R src/lib dist
     - npm publish
