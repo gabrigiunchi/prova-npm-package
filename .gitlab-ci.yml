@@ -9,5 +9,6 @@ build-job:
 publish:
   stage: deploy
   script:
-    - cp -R src/lib dist
+    - mkdir dist
+    - npm run prepare-publish
     - npm publish
