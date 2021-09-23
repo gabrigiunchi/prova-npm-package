@@ -1,3 +1,3 @@
-import {Child} from "./Child";
+import {Child} from "./components/Child";
 
 export {Child};
