@@ -9,4 +9,4 @@ build-job:
 publish:
   stage: deploy
   script:
-    - npm publish --access public
+    - npm publish
