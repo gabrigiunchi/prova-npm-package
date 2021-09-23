@@ -18,6 +18,7 @@
   ],
   "scripts": {
     "start": "react-scripts start",
+    "prepare-publish": "babel src/lib --out-dir dist --copy-files",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -40,7 +41,11 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gabrigiunchi/prova-npm-package.git"
