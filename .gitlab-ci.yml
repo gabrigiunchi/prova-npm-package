@@ -1,5 +1,7 @@
 default:
   image: node:14.17-alpine3.11
+  before_script:
+    - npm install --save-dev @babel/core @babel/cli
 
 build-job:
   stage: build
