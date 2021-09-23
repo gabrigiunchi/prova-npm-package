@@ -1,5 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {foo} from "../services/fooService";
 
 export const Component2 = () => {
-    return <span>component2</span>
+
+    const s = useState(foo());
+
+    return <div>
+        <p>component2</p>
+        <p>{s}</p>
+    </div>
 }
