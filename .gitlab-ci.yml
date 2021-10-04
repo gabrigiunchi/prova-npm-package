@@ -9,5 +9,6 @@ build-job:
 publish:
   stage: deploy
   script:
+    - npm install
     - npm run prepare-publish
     - npm publish
