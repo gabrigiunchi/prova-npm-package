@@ -9,6 +9,6 @@ build-job:
 publish:
   stage: deploy
   script:
-    - npm install --global rollup
+    - npm install
     - npm run prepare-publish
     - npm publish
