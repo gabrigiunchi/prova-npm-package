@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "start": "react-scripts start",
-    "prepare-publish": "babel src/lib --out-dir dist --copy-files",
+    "prepare-publish": "rollup -c",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
