@@ -5,10 +5,12 @@ build-job:
   stage: build
   script:
     - npm install
+  artifacts:
+    paths:
+      - node_modules
 
 publish:
   stage: deploy
   script:
-    - npm install
     - npm run prepare-publish
     - npm publish
