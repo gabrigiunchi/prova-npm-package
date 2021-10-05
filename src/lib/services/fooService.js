@@ -1,3 +1,3 @@
 export const foo = () => {
-    return 'we';
+    return 'foo function result';
 }
