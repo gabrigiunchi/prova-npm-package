@@ -14,8 +14,7 @@ export default {
     ],
     plugins: [
         babel({
-            babelHelpers: 'bundled',
-            presets: ["@babel/preset-react", "@babel/preset-env"],
+            babelHelpers: 'bundled'
         }),
         resolve(),
         commonjs(),
