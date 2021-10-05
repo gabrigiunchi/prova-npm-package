@@ -9,7 +9,7 @@ export const Child = () => {
     const {t} = useTranslation();
     return <Provider store={store}>
         <img alt="logo" width="200px" src={Logo}/>
-        <p>child {process.env.REACT_APP_FOO}</p>
+        <p>child, env variable {process.env.REACT_APP_FOO}</p>
         <p>{t('key1')}</p>
         <Component2/>
     </Provider>
