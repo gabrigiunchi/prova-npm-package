@@ -1,6 +1,6 @@
 {
   "name": "@gabrigiunchi/prova-npm-package",
-  "version": "1.0.35",
+  "version": "1.0.36",
   "dependencies": {
     "@rollup/plugin-json": "^4.1.0",
     "@testing-library/jest-dom": "^5.11.4",
