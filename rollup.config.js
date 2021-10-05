@@ -6,15 +6,18 @@ import json from '@rollup/plugin-json';
 
 export default {
     input: 'src/lib/index.js',
-    output: {
-        file: 'dist/index.js',
-        format: 'cjs'
-    },
+    output: [
+        {
+            file: 'dist/index.js',
+            format: 'esm',
+        }
+    ],
     plugins: [
         json(),
         resolve(),
         image(),
         babel({
+            babelHelpers: 'bundled',
             presets: ["@babel/preset-react", "@babel/env"],
         }),
         commonjs(),
