@@ -13,13 +13,13 @@ export default {
         }
     ],
     plugins: [
-        json(),
         resolve(),
+        commonjs(),
+        json(),
         image(),
         babel({
             babelHelpers: 'bundled',
             presets: ["@babel/preset-react", "@babel/env"],
         }),
-        commonjs(),
     ]
 };
