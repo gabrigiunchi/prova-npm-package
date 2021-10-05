@@ -3,6 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import image from '@rollup/plugin-image';
 import json from '@rollup/plugin-json';
+import nodeResolve from "@rollup/plugin-node-resolve";
 
 export default {
     input: 'src/lib/index.js',
@@ -17,7 +18,7 @@ export default {
             babelHelpers: 'bundled',
             presets: ["@babel/preset-react", "@babel/env"],
         }),
-        resolve(),
+        nodeResolve({extensions: [".js"]}),
         commonjs(),
         json(),
         image(),
