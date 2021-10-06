@@ -10,6 +10,10 @@ export default {
     output: [
         {
             file: packageJson.main,
+            format: 'cjs',
+        },
+        {
+            file: packageJson.main,
             format: 'esm',
         }
     ],
