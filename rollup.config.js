@@ -3,7 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import image from '@rollup/plugin-image';
 import json from '@rollup/plugin-json';
 import replace from '@rollup/plugin-replace';
-import resolve from '@rollup/plugin-node-resolve';
+import {nodeResolve} from '@rollup/plugin-node-resolve';
 import dotenv from 'dotenv';
 
 const environment = process.env.NODE_ENV;
@@ -33,7 +33,7 @@ export default {
             preventAssignment: true,
             ...replaceVariables
         }),
-        resolve(),
+        nodeResolve(),
         babel({
             babelHelpers: 'bundled'
         }),
