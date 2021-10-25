@@ -34,10 +34,10 @@ export default {
             ...replaceVariables
         }),
         resolve(),
-        commonjs(),
         babel({
             babelHelpers: 'bundled'
         }),
+        commonjs(),
         json(),
         image(),
     ]
