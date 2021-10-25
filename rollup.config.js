@@ -4,13 +4,14 @@ import image from '@rollup/plugin-image';
 import json from '@rollup/plugin-json';
 import replace from '@rollup/plugin-replace';
 import {nodeResolve} from '@rollup/plugin-node-resolve';
+import dotenv from 'dotenv';
 
 const environment = process.env.NODE_ENV;
 let path = '.env';
 if (environment) {
     path += `.${environment}`
 }
-require('dotenv').config({path});
+dotenv.config({path});
 const replaceVariables = Object.entries(process.env)
     .map(entry => ({[`process.env.${entry[0]}`]: entry[1]}))
     .reduce((a, b) => ({...a, ...b}), {});
@@ -27,11 +28,11 @@ export default {
         }
     ],
     plugins: [
-        nodeResolve({extensions: ['.js']}),
         replace({
             preventAssignment: true,
             ...replaceVariables,
         }),
+        nodeResolve({extensions: ['.js']}),
         babel({
             babelHelpers: 'bundled'
         }),
