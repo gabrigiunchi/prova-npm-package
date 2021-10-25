@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import image from '@rollup/plugin-image';
 import json from '@rollup/plugin-json';
 import replace from '@rollup/plugin-replace';
+import {nodeResolve} from '@rollup/plugin-node-resolve';
 import dotenv from 'dotenv';
 
 const environment = process.env.NODE_ENV;
@@ -13,7 +14,7 @@ if (environment) {
 dotenv.config({path});
 const replaceVariables = Object.entries(process.env)
     .filter(entry => entry[0].startsWith('REACT_APP'))
-    .map(entry => ({[`process.env.${entry[0]}`]: entry[1]}))
+    .map(entry => ({[`process.env.${entry[0]}`]: JSON.stringify(entry[1])}))
     .reduce((a, b) => ({...a, ...b}), {});
 
 const packageJson = require('./package.json');
@@ -32,6 +33,7 @@ export default {
             preventAssignment: true,
             ...replaceVariables
         }),
+        nodeResolve({extensions: ['.js']}),
         babel({
             babelHelpers: 'bundled'
         }),
