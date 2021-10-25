@@ -5,6 +5,7 @@ import json from '@rollup/plugin-json';
 
 const packageJson = require('./package.json');
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
     input: 'src/lib/index.js',
     output: [
