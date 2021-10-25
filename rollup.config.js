@@ -13,8 +13,9 @@ if (environment) {
 }
 dotenv.config({path});
 const replaceVariables = Object.entries(process.env)
+    .filter(entry => entry[0].startsWith('REACT_APP'))
     .map(entry => ({[`process.env.${entry[0]}`]: entry[1]}))
-    .reduce((a, b) => ({...a, ...b}), {});
+    .reduce((a, b) => ({...a, ...b}), {})
 
 const packageJson = require('./package.json');
 
@@ -31,6 +32,7 @@ export default {
         replace({
             preventAssignment: true,
             ...replaceVariables,
+            'process.env.NODE_ENV': process.env.NODE_ENV
         }),
         resolve(),
         babel({
