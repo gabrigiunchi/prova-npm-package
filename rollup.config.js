@@ -12,7 +12,6 @@ if (environment) {
 }
 dotenv.config({path});
 const replaceVariables = Object.entries(process.env)
-
     .map(entry => ({[`process.env.${entry[0]}`]: JSON.stringify(entry[1])}))
     .reduce((a, b) => ({...a, ...b}), {});
 
