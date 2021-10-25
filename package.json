@@ -13,10 +13,6 @@
     "react-redux": "^7.2.5",
     "redux": "^4.1.1"
   },
-  "resolutions": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
@@ -48,6 +44,8 @@
     ]
   },
   "devDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
@@ -55,7 +53,6 @@
     "dotenv": "^10.0.0",
     "@rollup/plugin-commonjs": "^21.0.0",
     "@rollup/plugin-image": "^2.1.1",
-    "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-replace": "^3.0.0",
     "react-scripts": "4.0.3",
     "rollup": "^2.58.0"
