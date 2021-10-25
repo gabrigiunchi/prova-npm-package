@@ -13,7 +13,7 @@ if (environment) {
 }
 dotenv.config({path});
 const replaceVariables = Object.entries(process.env)
-    .filter(entry => entry[0].startsWith('REACT_APP') || entry[0] === 'NODE_ENV')
+    .filter(entry => entry[0].startsWith('REACT_APP'))
     .map(entry => ({[`process.env.${entry[0]}`]: entry[1]}))
     .reduce((a, b) => ({...a, ...b}), {})
 
