@@ -33,7 +33,7 @@ export default {
             preventAssignment: true,
             ...replaceVariables
         }),
-        nodeResolve(),
+        nodeResolve({extensions: ['.js']}),
         babel({
             babelHelpers: 'bundled'
         }),
