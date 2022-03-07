@@ -4,7 +4,7 @@ import image from '@rollup/plugin-image';
 import json from '@rollup/plugin-json';
 import replace from '@rollup/plugin-replace';
 import dotenv from 'dotenv';
-import css from '@modular-css/rollup';
+import postcss from 'rollup-plugin-postcss'
 
 const environment = process.env.NODE_ENV;
 let path = '.env';
@@ -38,6 +38,9 @@ export default {
         commonjs(),
         json(),
         image(),
-        css()
+        postcss({
+            extract: false,
+            modules: true
+        })
     ]
 };
