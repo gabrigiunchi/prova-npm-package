@@ -40,7 +40,7 @@ export default {
         image(),
         postcss({
             extract: false,
-            modules: true
+            autoModules: true
         })
     ]
 };
