@@ -4,13 +4,14 @@ import Logo from '../logo.svg';
 import {Provider} from "react-redux";
 import store from "../redux/store";
 import {useTranslation} from 'react-i18next';
+import './Child.scss';
 
 export const Child = () => {
     const {t} = useTranslation();
     return <Provider store={store}>
-        <img alt="logo" width="200px" src={Logo}/>
+        <img alt="logo" src={Logo} />
         <p>child, env variable {process.env.REACT_APP_FOO}</p>
         <p>{t('key1')}</p>
-        <Component2/>
+        <Component2 />
     </Provider>
 }
