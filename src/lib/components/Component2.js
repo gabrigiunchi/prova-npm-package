@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {foo} from "../services/fooService";
 import {connect} from "react-redux";
-import classes from './Component2.module.css';
+import classes from './Component2.module.scss';
 
 const Component2 = ({array}) => {
 
