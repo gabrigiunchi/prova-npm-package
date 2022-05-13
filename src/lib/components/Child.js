@@ -7,10 +7,15 @@ import {useTranslation} from 'react-i18next';
 import './Child.scss';
 
 export const Child = () => {
+
+    console.log('this is a console.log');
+
     const {t} = useTranslation();
+
     return <Provider store={store}>
         <img alt="logo" src={Logo} />
         <p className="title">child, env variable {process.env.REACT_APP_FOO}</p>
+        <p>this is the common variable: {process.env.REACT_APP_FOO}</p>
         <p>{t('key1')}</p>
         <Component2 />
     </Provider>
