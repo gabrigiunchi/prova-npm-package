@@ -1,13 +1,18 @@
 default:
-  image: node:14.17-alpine3.11
+  image: node:16-alpine
 
-build-job:
+build:
   stage: build
   script:
     - npm install
   artifacts:
     paths:
       - node_modules
+
+test:
+  stage: test
+  script:
+    - npm run test
 
 publish:
   stage: deploy
