@@ -8,9 +8,13 @@ import './Child.scss';
 
 export const Child = () => {
     const {t} = useTranslation();
+    
+    console.log('this is a console.log')
+
     return <Provider store={store}>
         <img alt="logo" src={Logo} />
         <p className="title">child, env variable {process.env.REACT_APP_FOO}</p>
+        <p>this is the common variable: {process.env.REACT_APP_FOO}</p>
         <p>{t('key1')}</p>
         <Component2 />
     </Provider>
