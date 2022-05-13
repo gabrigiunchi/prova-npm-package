@@ -5,6 +5,7 @@ import json from '@rollup/plugin-json';
 import replace from '@rollup/plugin-replace';
 import dotenv from 'dotenv';
 import postcss from 'rollup-plugin-postcss';
+import strip from '@rollup/plugin-strip';
 
 const getVariablesToReplace = () => {
     const getEnvironmentVariables = (path) => {
@@ -48,6 +49,7 @@ export default {
         babel({
             babelHelpers: 'bundled'
         }),
+        strip(),
         commonjs(),
         json(),
         image(),

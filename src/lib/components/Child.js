@@ -7,10 +7,9 @@ import {useTranslation} from 'react-i18next';
 import './Child.scss';
 
 export const Child = () => {
-
-    console.log('this is a console.log');
-
     const {t} = useTranslation();
+    
+    console.log('this is a console.log')
 
     return <Provider store={store}>
         <img alt="logo" src={Logo} />
