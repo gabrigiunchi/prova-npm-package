@@ -51,9 +51,9 @@ export default {
             babelHelpers: 'bundled'
         }),
         strip(),
-        image(),
         commonjs(),
         svgr({ icon: true }),
+        image(),
         json(),
         postcss({
             extract: false,
