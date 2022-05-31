@@ -23,7 +23,7 @@ const getVariablesToReplace = () => {
     if (environment) {
         replaceVariables = {
             ...replaceVariables,
-            ...getEnvironmentVariables(`env.${environment}`)
+            ...getEnvironmentVariables(`.env.${environment}`)
         }
     }
 
