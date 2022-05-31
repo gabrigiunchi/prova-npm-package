@@ -1,6 +1,6 @@
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
-import image from '@rollup/plugin-image';
+import url from '@rollup/plugin-url';
 import json from '@rollup/plugin-json';
 import replace from '@rollup/plugin-replace';
 import dotenv from 'dotenv';
@@ -52,10 +52,21 @@ export default {
         strip(),
         commonjs(),
         json(),
-        image(),
+        url({
+            limit: 0,
+            destDir: './dist/assets',
+            publicPath: './assets/'
+        }),
         postcss({
             extract: false,
             autoModules: true
         })
+    ],
+    external: [
+        'i18next',
+        'react-i18next',
+        'react',
+        'react-redux',
+        'redux'
     ]
 };
