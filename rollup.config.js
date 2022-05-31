@@ -1,11 +1,12 @@
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
-import url from '@rollup/plugin-url';
+import image from '@rollup/plugin-image';
 import json from '@rollup/plugin-json';
 import replace from '@rollup/plugin-replace';
 import dotenv from 'dotenv';
 import postcss from 'rollup-plugin-postcss';
 import strip from '@rollup/plugin-strip';
+import svgr from '@svgr/rollup'
 
 const getVariablesToReplace = () => {
     const getEnvironmentVariables = (path) => {
@@ -30,15 +31,15 @@ const getVariablesToReplace = () => {
     return replaceVariables;
 }
 
-const packageJson = require('./package.json');
-
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
     input: 'src/lib/index.js',
     output: [
         {
-            file: packageJson.main,
-            format: 'esm'
+            dir: 'dist',
+            format: 'esm',
+            preserveModules: true,
+            preserveModulesRoot: 'src/lib'
         }
     ],
     plugins: [
@@ -50,13 +51,10 @@ export default {
             babelHelpers: 'bundled'
         }),
         strip(),
+        image(),
         commonjs(),
+        svgr({ icon: true }),
         json(),
-        url({
-            limit: 0,
-            destDir: './dist/assets',
-            publicPath: './assets/'
-        }),
         postcss({
             extract: false,
             autoModules: true
