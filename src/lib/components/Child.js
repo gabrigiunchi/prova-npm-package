@@ -16,7 +16,7 @@ export const Child = () => {
         <Logo width="200px" height="100%" />
         <img src={Image} alt="main" />
         <p className="title">child, env variable {process.env.REACT_APP_FOO}</p>
-        <p>this is the common variable: {process.env.REACT_APP_FOO}</p>
+        <p>this is the common variable: {process.env.REACT_APP_COMMON}</p>
         <p>{t('key1')}</p>
         <Component2 />
     </Provider>
